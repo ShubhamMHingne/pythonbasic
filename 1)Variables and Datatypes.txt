@@ -1,0 +1,194 @@
+Python does not have Variable types, rather they are just a reference to the object.
+
+eg.
+if you type 
+>>>name = "Shubham"
+and print name it will print Shubham.
+
+In the same way if you type
+>>>name = 10
+and print name it will print 10.
+
+Above example shows that name is not a type of variable rather , objects which name is pointing at are having types.
+--------------------------------------------------------------------------------------------------------------------
+If you want to see the memory location of the variable you can do it by following:
+>>>id(name)
+23142528
+
+printing in hex
+>>>hex(id(name))
+'0x1612080'
+
+or
+
+>>>name.__repr__
+<method-wrapper '__repr__' of int object at 0x1612080>
+--------------------------------------------------------------------------------------------------------------------
+Datatypes:
+->Strings
+->Numbers
+->Lists
+->Dictionaries
+->Tuples
+->Boolean
+->...
+--------------------------------------------------------------------------------------------------------------------
+*Strings:
+->Definitions
+	-name = "Shubham"
+	-name = 'Shubham'
+	-name = "Shubham's"
+	-name = "Shubham\nHingne"
+	-name = H'Shubham\nHingne'(raw strings turns off escaping)
+	-name = """
+			Shubham
+			Hingne
+		"""
+
+->Unicode for Internationalization
+	-name = u'Shubham'
+
+->Strings are immutable Objects in Python
+
+eg.
+>>>name = "Shubham"
+>>>print name[0]
+S
+
+If you tried to change it like
+>>>name[0] = "D"
+
+This will give following error
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+
+->Concatenating Strings
+  -S1+S2
+eg.
+>>>first_name = "Shubham"
+>>>last_name = "Hingne"
+>>>full_name = first_name+last_name
+>>>print full_name
+ShubhamHigne
+
+->Repeated sequence in String
+  -buffer = "A"*20
+eg.
+>>>line = "Shubham"*5
+ShubhamShubhamShubhamShubhamShubham
+
+->Slicing - breaking up the string
+  -string[start:end:steps]
+eg.
+>>>name = "Shubham Hingne"
+>>>name[5:10]
+'am Hi'
+>>>name[5:10:2] #Step of 2
+'a i'
+>>>name[5:10:3]
+'aH'
+
+->Converting a string to an integer
+>>>int("42")
+42
+>>>str(42)
+'42'
+
+->string.find(...)
+eg.
+>>>name = "Shubham Hingne"
+>>>name.find('bh')
+3
+>>>name.find('Hello')
+-1			#output -1 means String not found
+
+->string.split(...)
+eg.
+>>>name.split()
+['Shubham', 'Hingne']
+>>>name.split('a')
+['Shubh', 'm Hingne']
+>>>name.split('h')
+['S', 'ub', 'am', 'Hingne']
+
+->string.replace(...)
+eg.
+>>>name.replace('Shubham', 'Blastkicker')
+'Blastkicker Hingne'
+
+After everything you have done try printing name variable
+>>>name
+'Shubham Hingne'
+
+As seen earlier Strings are immutable in Python.
+
+->String Formatting
+eg.
+>>>ip = "192.168.56.101"
+>>>line = "Crack this IP: %s" % ip
+>>>line
+'Crack this IP:192.168.56.101'
+>>>line = "Crack this IP: %s and name %s" % (ip, "Shubham")
+>>>line
+'Crack this IP: 192.168.56.101 and name Shubham'
+>>>line = "Crack this IP: %s and name %s" % (ip, name)    #String name needs to be defined earlier
+>>>line
+'Crack this IP: 192.168.56.101 and name Shubham Hingne'
+--------------------------------------------------------------------------------------------------------------------
+*Numbers:
+->Integers, Floats etc. can be represented
+->Operators
+	+,-,*, /
+	x**y (x to the power)
+	(>,=,<,>=,<=,==)
+	x|y,x^y,x&y(bitwise operators)
+	x and y,x or y, not x (logical operators)
+--------------------------------------------------------------------------------------------------------------------
+*Lists:
+->Collection of objects can be heterogeneous.
+->mylist = [1,2,3,4]
+->mylist = [1, "Shubham", "Sysadmin", 1.1]
+->mylist = [1,[3,4, "Hello"], [3,4], 2,3]
+->len(mylist)
+->len(mylist[1])
+
+eg.
+>>> mylist = [1,2,3]
+>>> len(mylist)
+3
+>>> mylist[2]
+3
+>>> mylist[1]
+2
+>>> mylist[0]
+1
+>>> mylist = [1,2,3,4,[50,60]]
+>>>len(mylist)
+5
+>>> mylist = [1, "Shubham", 3, "Hello"]
+>>>mylist
+[1, 'Shubham', 3, 'Hello']
+
+>>>mylist.appends(6)
+>>>mylist
+[1, 'Shubham', 3, 'Hello', 6]
+
+>>>mylist.reverse()
+>>>mylist
+[6, 'Hello', 3, 'Shubham', 1]
+
+>>>mylist.pop()		#Deletes last entry
+1
+>>>mylist
+[6, 'Hello', 3, 'Shubham']
+
+>>>mylist.insert(4, "Hingne")
+>>>mylist
+[6, 'Hello', 3, 'Shubham', 'Hingne', 1]
+
+>>>del mylist[4]
+[6, 'Hello', 3, 'Shubham']
+--------------------------------------------------------------------------------------------------------------------
+*

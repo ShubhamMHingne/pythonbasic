@@ -1,0 +1,9 @@
+If you want to create new virtualenv using the same dependencies as an old project:
+Go to that projects virtualenv activate that environment and type following:
+>pip freeze --local > requirements.txt
+
+Create new virtualenv , activate is and install pip packages by following
+>pip install -r requirements.txt
+
+Verify package installation using:
+>pip list

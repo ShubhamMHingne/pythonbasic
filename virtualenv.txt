@@ -1,0 +1,27 @@
+If you have multiple projects , if every project uses different dependencies for development you can isolate your every project from each other.
+
+Installing virtualenv
+>pip install virtualenv
+
+Creating new virtual env
+>virtualenv project1_env
+
+Activating newly created virtualenv
+>source project1_env/bin/activate
+
+To verify which python type
+>which python
+>which pip
+
+Also you can check the difference between multiple virtualenv by installing pip packages
+>pip install numpy
+>pip install putz
+>pip list
+
+Now exit your current environment by
+>deactivate
+
+list pip packages
+>pip list
+
+you will get the difference between packages.
