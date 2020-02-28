@@ -24,4 +24,4 @@ Now exit your current environment by
 list pip packages
 >pip list
 
-you will get the difference between packages.
+you will get the difference between packages..
